@@ -14,10 +14,9 @@
         <div class="container">
             <a href="" class="navbar-brand">LOGO</a>
             <ul class="navbar-nav">
-                <li><a href="action.php?pages=password-reset" class="nav-link">Password Reset</a></li>
-                <li><a href="action.php?pages=file-upload" class="nav-link">File Upload</a></li>
-                <li><a href="action.php?pages=pattern" class="nav-link">Pattern</a></li>
-                <li><a href="action.php?pages=all-blogs" class="nav-link">All Blog</a></li>
+                <li><a href="action.php?pages=home" class="nav-link">Home</a></li>
+                <li><a href="action.php?pages=series" class="nav-link">Series</a></li>
+                <li><a href="action.php?pages=register" class="nav-link">Registration</a></li>
             </ul>
         </div>
     </nav>

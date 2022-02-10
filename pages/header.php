@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +12,8 @@
     <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
+
+<?php if (isset($_SESSION['id'])) { ?>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <a href="" class="navbar-brand">LOGO</a>
@@ -17,6 +21,13 @@
                 <li><a href="action.php?pages=home" class="nav-link">Home</a></li>
                 <li><a href="action.php?pages=series" class="nav-link">Series</a></li>
                 <li><a href="action.php?pages=register" class="nav-link">Registration</a></li>
+                <li class="dropdown">
+                    <a href="action.php?pages=register" class="nav-link dropdown-toggle" data-toggle="dropdown">User Name</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="action.php?pages=logout" class="dropdown-item">Logout</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
+<?php } ?>

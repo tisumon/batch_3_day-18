@@ -1,23 +1,63 @@
 <?php
-
+session_start();
 require_once 'vendor/autoload.php';
 use App\classes\Home;
 use App\classes\Series;
 use App\classes\Register;
+use App\classes\Auth;
 
 if (isset($_GET['pages']))
 {
     if($_GET['pages'] == 'home')
     {
-        include 'pages/home.php';
+        if(isset($_SESSION['id']))
+        {
+            include 'pages/home.php';
+        }
+        else{
+            $auth = new Auth();
+            $auth->login();
+        }
     }
     elseif ($_GET['pages'] == 'series')
     {
-        include 'pages/series.php';
+        if(isset($_SESSION['id']))
+        {
+            include 'pages/series.php';
+        }
+        else{
+            $auth = new Auth();
+            $auth->login();
+        }
     }
     elseif ($_GET['pages'] == 'register')
     {
-        include 'pages/register.php';
+        if(isset($_SESSION['id']))
+        {
+            include 'pages/register.php';
+        }
+        else{
+            $auth = new Auth();
+            $auth->login();
+        }
+
+    }
+    elseif ($_GET['pages'] == 'login')
+    {
+        if(isset($_SESSION['id']))
+        {
+            $home =new Home();
+            $home->index();
+        }
+        else{
+
+            include 'pages/login.php';
+        }
+    }
+    elseif ($_GET['pages'] =='logout')
+    {
+        $auth = new Auth();
+        $auth->logout();
     }
 }
 
@@ -38,6 +78,12 @@ elseif (isset($_POST['register_btn']))
 {
     $register = new Register($_POST);
 
+}
+elseif (isset($_POST['login_btn']))
+{
+    $auth    = new Auth($_POST);
+    $message = $auth->verify();
+    include 'pages/login.php';
 }
 else{
     $home = new Home();

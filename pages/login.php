@@ -3,37 +3,39 @@
 <section class="py-5 bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-6 mx-auto mt-5">
                 <div class="card">
-                    <div class="card-header">Prime NUmber</div>
+                    <div class="card-header">Login Form</div>
                     <div class="card-body">
+                        <h3 class="text-danger text-center"><?php echo isset($message) ? $message: ''; ?></h3>
+                        <form action="action.php" method="POST">
 
-<!--                      <h1>--><?php //session_start(); echo $_SESSION['name']; ?><!--</h1>-->
-
-                        <form action="action.php" method="POST" >
                             <div class="form-group row">
-                                <label class="col-md-3">Enter Number</label>
+                                <label class="col-md-3">Email Address</label>
                                 <div class="col-md-9">
-                                    <input type="number" class="form-control" name="given_number"/>
+                                    <input type="email" class="form-control" name="email"/>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3">Result</label>
+                                <label class="col-md-3">Password</label>
                                 <div class="col-md-9">
-                                    <input type="text" value="<?php echo isset($result) ? $result: ' '; ?>" class="form-control"/>
+                                    <input type="password" class="form-control" name="password"/>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3"></label>
                                 <div class="col-md-9">
-                                    <input type="submit" class="btn btn-outline-success" name="btn" value="submit"/>
+                                    <input type="submit" class="btn btn-block btn-outline-success" name="login_btn" value="login"/>
                                 </div>
                             </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <?php include 'footer.php';?>

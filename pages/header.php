@@ -21,8 +21,9 @@
                 <li><a href="action.php?pages=home" class="nav-link">Home</a></li>
                 <li><a href="action.php?pages=series" class="nav-link">Series</a></li>
                 <li><a href="action.php?pages=register" class="nav-link">Registration</a></li>
+                <li><a href="action.php?pages=all-data" class="nav-link">All Data</a></li>
                 <li class="dropdown">
-                    <a href="action.php?pages=register" class="nav-link dropdown-toggle" data-toggle="dropdown">User Name</a>
+                    <a href="action.php?pages=register" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['name'];?></a>
                     <ul class="dropdown-menu">
                         <li><a href="action.php?pages=logout" class="dropdown-item">Logout</a></li>
                     </ul>

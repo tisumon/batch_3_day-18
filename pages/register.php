@@ -6,6 +6,8 @@
                 <div class="card">
                     <div class="card-header">Registration Form</div>
                     <div class="card-body">
+                        <h4><?php echo isset($message) ? $message:'' ?></h4>
+
                         <form action="action.php" method="POST" >
                             <div class="form-group row">
                                 <label class="col-md-3">Full Name</label>
@@ -23,17 +25,6 @@
                                 <label class="col-md-3">Phone Number</label>
                                 <div class="col-md-9">
                                     <input type="number" name="mobile" required class="form-control"/>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-md-3">Subject</label>
-                                <div class="col-md-9">
-                                   <label><input type="checkbox" name="subject[]" value="Bangla">Bangla</label>
-                                   <label><input type="checkbox" name="subject[]" value="English">English</label>
-                                   <label><input type="checkbox" name="subject[]" value="Math">Math</label>
-                                   <label><input type="checkbox" name="subject[]" value="Physics">Physics</label>
-                                   <label><input type="checkbox" name="subject[]" value="Chemistry">Chemistry</label>
-                                   <label><input type="checkbox" name="subject[]" value="Biology">Biology</label>
                                 </div>
                             </div>
                             <div class="form-group row">
